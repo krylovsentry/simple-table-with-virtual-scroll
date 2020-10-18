@@ -1,0 +1,17 @@
+<cdk-virtual-scroll-viewport [itemSize]="20">
+  <table>
+    <thead class="table__head">
+    <tr class="table__head-titles">
+      <th *ngFor="let columnTitle of columnTitles$ | async">{{columnTitle | titlecase}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *cdkVirtualFor="let row of (data$ | async)?.data; trackBy: trackByFn.bind(this)">
+      <td *ngFor="let cellData of row">{{cellData}}</td>
+    </tr>
+    <tr>
+      <td *ngFor="let total of totals$ | async">{{total | number}}</td>
+    </tr>
+    </tbody>
+  </table>
+</cdk-virtual-scroll-viewport>

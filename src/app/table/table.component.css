@@ -1,0 +1,8 @@
+cdk-virtual-scroll-viewport {
+  height: 100vh;
+}
+
+.table__head .table__head-titles{
+  position: sticky;
+  top: 0;
+}
